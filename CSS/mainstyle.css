@@ -1,0 +1,12 @@
+body{
+    background-color: black;
+    color: #DDDDDD;
+}
+.box{
+ border: 1px solid white;
+
+}
+#home{
+    width: 100%;
+    height: 800px;
+}
