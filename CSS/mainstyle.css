@@ -2,3 +2,12 @@
 button #lighter{
     margin: auto;
 }
+.box{
+    border: 1px solid black;
+    margin: 5px;
+}
+
+body{
+    min-width:100Vh;
+
+}
