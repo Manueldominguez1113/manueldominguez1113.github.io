@@ -1,13 +1,11 @@
 
-
-
-.page1{
-/*    width: 75%;
-    height: 100%;*/
+.page1 {
+    /*    width: 75%;
+        height: 100%;*/
 
 }
 
-#contact{
+#contact {
 
 }
 
@@ -15,7 +13,8 @@
 #navBar {
 
 }
-#navBar a{
+
+#navBar a {
     /*
     border: 1px solid grey;
     padding: 50px;
@@ -23,27 +22,63 @@
     */
 
 }
-.Portrait{
-    background-color: black;
+
+
+.background {
+    overflow: hidden;
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+.skybox{
+    position: absolute;
+    width: 100%;
+
+}
+.skybox.day{
+    margin-top: -140%;
+    transition-duration: 4s;
+}
+.skybox.night{
+    margin-top: 0;
+    transition-duration: 4s;
+}
+.ground{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    margin-top: 10%;
+}
+.ground.night{
+
+    transition-duration: 4s;
+}
+.Portrait {
     width: 100vw;
     height: 80vh;
     z-index: 1;
 
 }
-.Portrait img{
 
+.Portrait img {
+    z-index: 3;
+    position: absolute;
+    top: 0;
 }
-.text{
+
+
+.text {
 
     margin: 5px auto 0 auto;
     width: 80%;
 }
-.contactInfo{
+
+.contactInfo {
     height: 32px;
     width: 32px;
 }
 
-.contactInfo:hover{
+.contactInfo:hover {
     filter: invert(1);
     background-color: black;
     border-radius: 50%;
