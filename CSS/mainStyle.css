@@ -53,6 +53,20 @@
 
     transition-duration: 4s;
 }
+.ground.sky{
+    margin-top: 100%;
+}
+.cockpit{
+    position: fixed;
+    left: 50%;
+    margin-top: 27vh;
+    transform: translateX(-50%);
+    transition-duration: 4s;
+}
+
+.cockpit.land{
+    transform: translate(-50%, 100%);
+}
 .Portrait {
     width: 100vw;
     height: 80vh;
