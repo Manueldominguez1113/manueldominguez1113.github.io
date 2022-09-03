@@ -1,89 +1,66 @@
 
-.page1 {
-    /*    width: 75%;
-        height: 100%;*/
-
-}
-
-#contact {
-
-}
-
-
-#navBar {
-
-}
-
-#navBar a {
-    /*
-    border: 1px solid grey;
-    padding: 50px;
-    margin-top: 100px;
-    */
-
-}
-
-
-.background {
-    overflow: hidden;
-    position: relative;
-    height: 100%;
-    width: 100%;
-}
-.skybox{
-    position: absolute;
-    width: 100%;
-
-}
-.skybox.day{
-    margin-top: -140%;
-    transition-duration: 4s;
-}
-.skybox.night{
-    margin-top: 0;
-    transition-duration: 4s;
-}
-.ground{
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    margin-top: 10%;
-}
-.ground.night{
-
-    transition-duration: 4s;
-}
-.ground.sky{
-    margin-top: 100%;
-}
-.cockpit{
-    position: fixed;
-    left: 50%;
-    margin-top: 27vh;
-    transform: translateX(-50%);
-    transition-duration: 4s;
-}
-
-.cockpit.land{
-    transform: translate(-50%, 100%);
-}
 .Portrait {
     width: 100vw;
     height: 80vh;
     z-index: 1;
 
 }
-
-.Portrait img {
-    z-index: 3;
+.background {
+    overflow: hidden;
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+.skybox,.cockpit,.ground {
     position: absolute;
-    top: 0;
+    transition-duration: 4s;
+}
+.Portrait.day .skybox{
+    margin-top: -140%;
+
 }
 
+.Portrait.day .groundNight,.Portrait.night .groundDay {
+    opacity: 0;
+}
+.Portrait.day .groundDay, .Portrait.night .groundNight{
+    opacity: 1;
+}
 
+.Portrait.night .skybox{
+    margin-top: 0;
+}
+.Portrait.land .ground{
+    margin-top: 10%;
+}
+.Portrait.land .cockpit{
+    transform: translate(-50%, 51%);
+}
+.Portrait.sky .ground{
+    margin-top: 25%;
+}
+.Portrait.sky .cockpit{
+    transform: translateX(-50%);
+}
+.skybox{
+    width: 100%;
+}
+.ground{
+    left: 50%;
+transform: translate(-50%);
+}
+.groundDay , .groundNight{
+    transition-duration: 1s;
+    transition-delay: 1s;
+}
+.cockpit{
+    left: 50%;
+    margin-top: 27vh;
+
+}
 .text {
 
-    margin: 5px auto 0 auto;
+    height: 20vh;
     width: 80%;
 }
 
