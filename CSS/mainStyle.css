@@ -1,9 +1,22 @@
-body{
-overflow: hidden;
+.spinning {
+    animation: 0.25s infinite spinning;
+}
+@keyframes spinning {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+body {
+    overflow: hidden;
     background-color: black;
-/* background-image: url("/assets/portrait/starnight/starrynightend.gif");*/
+    /* background-image: url("/assets/portrait/starnight/starrynightend.gif");*/
     background-image: url("/assets/portrait/simplestarrynight.png");
 }
+
 .contactInfo {
     height: 32px;
     width: 32px;
@@ -16,75 +29,134 @@ overflow: hidden;
     transform: scale(2) translateY(-10px);
     transition: transform 250ms ease-in-out;
 }
-#dayNight{
+
+#dayNight {
     position: absolute;
     left: 0;
     top: 0;
-    z-index: 3;
+    z-index: 5;
 }
-#landSky{
+
+#landSky {
     position: absolute;
     left: 100px;
     top: 0;
-    z-index: 3;
+    z-index: 5;
 }
 
 
-@media screen and (max-width: 374px) {
-    .Portrait{
+@media screen and (max-width: 374px), (max-height: 700px){
+    .Portrait {
         display: none;
     }
-    .text{
+
+    .text {
         visibility: visible;
         margin: auto;
     }
 }
-@media screen and (min-width: 375px) and (max-height: 700px){
-    .cockpit{
-        left: 50%;
-        bottom: -360px;
-        transform: translateX(-55%);
-    }
-    .ground{
-        left: 50%;
-        bottom: -320px;
-        transform: translate(-50%);
-    }
-}
 
-@media screen and (min-width: 375px) and (min-height: 701px){ /*bare minimum for optimal portrait*/
-    .Portrait.land .ground{
+
+@media screen and (min-width: 375px) and (min-height: 701px) {
+    /*bare minimum for optimal portrait*/
+
+    .passingLeft{
+        animation: 6s ease-in-out cloudPassingLeft;
+    }
+    .passingRight{
+        animation: 6s ease-in-out cloudPassingRight;
+    }
+    @keyframes cloudPassingLeft {
+        0%{
+            left: 50%;
+            top: -20%;
+            transform: translateX(-50%) scale(0);
+        }
+        50%{
+            left: 50%;
+            top: -20%;
+            transform:  translateX(-50%) scale(0.8);
+        }
+        100%{
+            left: -200%;
+            top: -30%;
+            transform: translateX(-50%) scale(2);
+        }
+    }
+    @keyframes cloudPassingRight {
+        0%{
+            left: 50%;
+            top: -20%;
+            transform: translateX(-50%) scale(0);
+        }
+        50%{
+            left: 50%;
+            top:-20%;
+            transform:  translateX(-50%) scale(0.8);
+        }
+        100%{
+            left: 300%;
+            top: -30%;
+            transform: translateX(-50%) scale(2);
+        }
+    }
+
+
+    .Portrait.land .ground {
         margin-top: 10%;
-        bottom: -250px;
+        bottom: -180px;
     }
-    .Portrait.land .cockpit{
-        bottom: -540px;
-    }
-    .ground{
-        left: 50%;
-        bottom: -456px;
-        transform: translate(-50%);
-    }
-    .cockpit{
-             left: 50%;
-             bottom: -230px;
-             transform: translateX(-55%);
-         }
 
-    .skybox,.cockpit,.ground, .celestial{
+    .Portrait.land .cockpit {
+        bottom: -586px;
+    }
+    .Portrait.land .prop {
+        bottom: -500px;
+    }
+
+    .skybox, .cockpit,  .celestial, .prop, .cloud1 {
         position: absolute;
         transition-duration: 3s;
     }
-    .celestial{
-        right: 50px;
-        top: 3%;
+
+    .ground {
+        position: absolute;
+        left: 50%;
+        bottom: -456px;
+        transform: translate(-50%);
+        transition-duration: 0.8s;
+        transition-delay: 0.77s;
+        z-index: 3;
+    }
+
+    .prop {
+        transform: translateX(-50%);
+        left: 50%;
+        bottom: -204px;
+        width: 500px;
+        height: 500px;
+        z-index: 3;
+    }
+
+    .cockpit {
+        left: 50%;
+        bottom: -290px;
+        transform: translateX(-51%);
         z-index: 4;
+    }
+
+    .celestial {
+        right: 10px;
+        top: -5%;
+        z-index: 1;
         height: 200px;
         width: 200px;
     }
-}
-
-@media screen and (min-width: 375px) {
+    .cloud1{
+    z-index: 2;
+    left: -100%;
+        transform: translateX(-50%);
+    }
 
     .Portrait {
         width: 100vw;
@@ -93,47 +165,89 @@ overflow: hidden;
         position: relative;
     }
 
-
-    .Portrait.day .groundNight,.Portrait.night .groundDay, .Portrait.day .moon, .Portrait.night .sun {
+/*switch between night and day for all things*/
+    .Portrait.day .groundNight, .Portrait.night .groundDay, .Portrait.day .moon, .Portrait.night .sun, .Portrait.day .nightCloud, .Portrait.night .dayCloud {
         opacity: 0;
     }
-    .Portrait.day .groundDay, .Portrait.night .groundNight,.Portrait.day .sun, .Portrait.night .moon {
+    .Portrait.day .groundDay, .Portrait.night .groundNight, .Portrait.day .sun, .Portrait.night .moon, .Portrait.day .dayCloud, .Portrait.night .nightCloud {
         opacity: 1;
     }
-    .Portrait.day .skybox{
+
+    .Portrait.day .skybox {
         bottom: 0;
     }
-    .Portrait.night .skybox{
-        bottom: -125vh;
-    }
 
-    /*.groundDay , .groundNight{*/
-    /*    transition-duration: 1s;*/
-    /*    transition-delay: 1s;*/
-    /*}*/
+    .Portrait.night .skybox {
+        bottom: -140vh;
+    }
 
 
     .text {
-        visibility: hidden; /*hidden until i set up the area for text*/
-        width: 80%;
+
     }
 }
 
+@media screen and (min-width: 700px) {
+    .passingLeft{
+        animation: 6s ease-in-out cloudPassingLeft;
+    }
+    .passingRight{
+        animation: 6s ease-in-out cloudPassingRight;
+    }
+    @keyframes cloudPassingLeft {
+        0%{
+            left: 50%;
+            top: -5%;
+            transform: translateX(-50%) scale(0);
+        }
+        50%{
+            left: 50%;
+            top: -5%;
+            transform:  translateX(-50%) scale(1);
+        }
+        100%{
+            left: -110%;
+            top: -15%;
+            transform: translateX(-50%) scale(2);
+        }
+    }
+    @keyframes cloudPassingRight {
+        0%{
+            left: 50%;
+            top: -5%;
+            transform: translateX(-50%) scale(0);
+        }
+        50%{
+            left: 50%;
+            top:-5%;
+            transform:  translateX(-50%) scale(1);
+        }
+        100%{
+            left: 220%;
+            top: -15%;
+            transform: translateX(-50%) scale(2);
+        }
+    }
+    /*bigger screen, bigger cloud!*/
 
-
-
-@media screen and (min-width: 700px){
-    .skybox{
+    .skybox {
         width: 100%;
     }
+
 }
-@media screen and (max-height: 850px){
-    .skybox{
+
+
+
+
+
+/*after 850 skybox is at max height, the following css fixes that*/
+@media screen and (max-height: 850px) {
+    .skybox {
         height: 1800px;
     }
 }
-@media screen and (min-height: 851px){
-    .skybox{
+@media screen and (min-height: 851px) {
+    .skybox {
         height: 225vh;
     }
 }
