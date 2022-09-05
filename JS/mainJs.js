@@ -11,3 +11,6 @@ dayNight.click(() => {
 $(".options").click(() => {
     $(".options").toggleClass("active");
 });
+let today = new Date();
+let time= today.getHours()+":"+ today.getMinutes();
+$("#clock").text(time);

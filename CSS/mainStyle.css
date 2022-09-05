@@ -115,13 +115,10 @@ body {
         bottom: -545px;
     }
 
-    .Portrait.land .prop {
-        bottom: -500px;
-    }
 
 
     /*all parts have this in common*/
-    .skybox, .cockpit, .celestial, .prop, .cloud1, .options {
+    .skybox, .cockpit, .celestial, .cloud1, .options {
         position: absolute;
         transition-duration: 3s;
     }
@@ -138,12 +135,11 @@ body {
     }
 
     .prop {
-        transform: translateX(-50%);
-        left: 50%;
-        bottom: -204px;
+        margin-left: 13%;
         width: 500px;
         height: 500px;
         z-index: 3;
+        transition-duration: 3s;
     }
 
     .celestial {
@@ -165,6 +161,9 @@ body {
         height: 100vh;
         z-index: 1;
         position: relative;
+    }
+    .cockpit{
+        z-index: 6;
     }
 
     /*options will cover the pilot and will be hover on hover devices(mouse), click on non(tablet)*/
@@ -188,14 +187,16 @@ body {
         animation: 4s infinite highlight;
         background-color: #008d00;
         color: #182f00;
+        top: 3%;
     }
 
     #clickable {
         left: 44%;
+
     }
 
     #hoverable {
-        top: 3%;
+
         left: 43.5%;
     }
 
@@ -229,6 +230,13 @@ body {
         right: 25%;
         bottom: 31%;
     }
+    #clock{
+        position: absolute;
+        left: 37.4%;
+        bottom: 54.7%;
+        font-size: 9px;
+        z-index: 6;
+    }
 
 
     /*switch between night and day for all things*/
@@ -258,8 +266,11 @@ body {
 /*hover effects*/
 @media screen  and (min-width: 375px) and (min-height: 701px) and (hover: hover) {
     /*on hover, all move up*/
-    .options:hover, .options:hover + div.prop + img.cockpit, .options:hover + div.prop {
+    .options:hover {
         bottom: -125px;
+    }
+    .options:hover .prop{
+        margin-top: -20px;
     }
 
     #clickable {
@@ -274,9 +285,6 @@ body {
         bottom: -130px;
     }
 
-    .options.active + div.prop + img.cockpit, .options.active + div.prop {
-        bottom: -125px;
-    }
 
     #hoverable {
         display: none;
