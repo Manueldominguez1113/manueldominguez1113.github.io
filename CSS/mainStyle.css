@@ -10,13 +10,16 @@
         transform: rotate(360deg);
     }
 }
-html{
+
+html {
 
 }
+
 body {
-position: fixed;
+    position: fixed;
     background-color: black;
-     background-image: url("/assets/portrait/starnight/starrynightend.gif");
+    background-position: center;
+    background-image: url("/assets/portrait/starnight/starrynightend.gif");
     /*background-image: url("/assets/portrait/simplestarrynight.png");*/
 }
 
@@ -118,7 +121,6 @@ position: fixed;
     }
 
 
-
     /*all parts have this in common*/
     .skybox, .cockpit, .celestial, .cloud1, .options {
         position: absolute;
@@ -164,7 +166,8 @@ position: fixed;
         z-index: 1;
         position: relative;
     }
-    .cockpit{
+
+    .cockpit {
         z-index: 6;
     }
 
@@ -179,9 +182,13 @@ position: fixed;
 
     }
 
-    .options button {
+    .options button, #dayNight, #contactMe {
         position: absolute;
         z-index: 7;
+        background-color: #055e00;
+        border: none;
+        color: #1bfc00;
+        text-align: center;
     }
 
     .guide {
@@ -204,39 +211,58 @@ position: fixed;
 
 
     .options #home {
-        left: 28%;
-        bottom: 45%;
+        left: 27.4%;
+        bottom: 39.5%;
+        padding: 20px 14px;
     }
 
     .options #skills {
-        left: 46%;
-        bottom: 31%;
+        left: 45.2%;
+        bottom: 27.2%;
+        padding: 20px 12px;
+
     }
 
     .options #work {
-        left: 46%;
-        bottom: 45%;
+        left: 45.2%;
+        bottom: 39.5%;
+        padding: 20px 14px;
     }
 
     .options #contactMe {
-        left: 61.5%;
-        bottom: 41%;
+        right: 25.6%;
+        bottom: 39.3%;
+        height: 65px;
+        width: 75px;
+        padding: 12px 1px;
+        font-size: 15px;
     }
 
     .options #about {
-        left: 28%;
-        bottom: 31%;
+        left: 27.44%;
+        bottom: 27.1%;
+        padding: 20px 10px;
     }
 
     .options #dayNight {
-        right: 25%;
-        bottom: 31%;
+        right: 25.6%;
+        bottom: 27.3%;
+        height: 62px;
+        width: 75px;
+        padding: 18px 10px;
+
     }
-    #clock{
+
+    .Portrait.day .dayText, .Portrait.night .nightText {
+        display: none;
+    }
+
+
+    #clock {
         position: absolute;
-        left: 37.4%;
+        left: 36.8%;
         bottom: 54.7%;
-        font-size: 9px;
+        font-size: 8px;
         z-index: 6;
     }
 
@@ -246,7 +272,7 @@ position: fixed;
         opacity: 0;
     }
 
-     .Portrait.night .groundNight, .Portrait.day .sun, .Portrait.night .moon, .Portrait.day .dayCloud, .Portrait.night .nightCloud, .Portrait.night .cockpitNight {
+    .Portrait.night .groundNight, .Portrait.day .sun, .Portrait.night .moon, .Portrait.day .dayCloud, .Portrait.night .nightCloud, .Portrait.night .cockpitNight {
         opacity: 1;
     }
 
@@ -271,12 +297,17 @@ position: fixed;
     .options:hover {
         bottom: -125px;
     }
-    .options:hover .prop{
+
+    .options:hover .prop {
         margin-top: -20px;
     }
 
     #clickable {
         display: none;
+    }
+    .options button:hover, #dayNight:hover, #contactMe:hover {
+        background-color: black;
+        color: #1bfc00;
     }
 }
 
