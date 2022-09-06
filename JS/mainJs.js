@@ -14,3 +14,5 @@ $(".options").click(() => {
 let today = new Date();
 let time= today.getHours()+":"+ today.getMinutes();
 $("#clock").text(time);
+document.body.scrollTop=0;
+document.body.scrollWidth=0;
