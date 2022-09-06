@@ -11,9 +11,10 @@
     }
 }
 html{
-    overflow: hidden;
+
 }
 body {
+position: fixed;
     background-color: black;
      background-image: url("/assets/portrait/starnight/starrynightend.gif");
     /*background-image: url("/assets/portrait/simplestarrynight.png");*/
