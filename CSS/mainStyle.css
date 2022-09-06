@@ -10,12 +10,13 @@
         transform: rotate(360deg);
     }
 }
-
-body {
+html{
     overflow: hidden;
+}
+body {
     background-color: black;
-    /* background-image: url("/assets/portrait/starnight/starrynightend.gif");*/
-    background-image: url("/assets/portrait/simplestarrynight.png");
+     background-image: url("/assets/portrait/starnight/starrynightend.gif");
+    /*background-image: url("/assets/portrait/simplestarrynight.png");*/
 }
 
 .contactInfo {
@@ -120,7 +121,7 @@ body {
     /*all parts have this in common*/
     .skybox, .cockpit, .celestial, .cloud1, .options {
         position: absolute;
-        transition-duration: 3s;
+        transition-duration: 1.5s;
     }
 
     /*specifics*/
