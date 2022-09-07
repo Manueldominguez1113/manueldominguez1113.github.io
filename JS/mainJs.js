@@ -73,7 +73,7 @@ const text = [
     },
     {
         id: 2,
-        name: 'about me',
+        name: 'About Me',
         field: " <div class=\"page page2  \"> <!--about-->\n" +
             "        I am an Air-force veteran, spending 10 years as an Air Traffic Controller, now an aspiring full stack developer\n" +
             "        interested in creating for you, be it new and exciting websites, artistic and unique approaches, to working on\n" +
@@ -87,7 +87,7 @@ const text = [
     },
     {
         id: 3,
-        name: 'Skills',
+        name: 'My Skills',
         field: "    <div class=\"page page3  \"> <!--skills combine with one of the smaller paragraphs-->\n" +
             "        My Skills\n" +
             "        ...I'm proficient in C# HTML, CSS, Javascript, Bootstrap, JQuery, and Unity so far. but I am continuing to learn\n" +

@@ -290,12 +290,17 @@
     }
 
     #textTitle{
+        position: absolute;
+        top: 0;
+
         color: #1bfc00;
     }
     .page {
         padding: 20px;
         overflow: scroll;
         color: #1bfc00;
+        width: 100%;
+        height: 100%;
     }
 
     .page1{
@@ -303,7 +308,6 @@
         top: 40%;
         left: 20%;
     }
-
 }
 
 /*hover effects for portrait*/
@@ -456,8 +460,7 @@
         transform: translate(-50%);
         height: 390px;
         width: 450px;
-        background-color: grey;
-        z-index: 20;
+        z-index: 1;
     }
 }
 
