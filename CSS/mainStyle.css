@@ -87,8 +87,8 @@
         position: fixed;
         background-color: black;
         background-position: center;
-        background-image: url("/assets/portrait/starnight/starrynightend.gif");
-        /*background-image: url("/assets/portrait/simplestarrynight.png");*/
+       /* background-image: url("/assets/portrait/starnight/starrynightend.gif");*/
+        background-image: url("/assets/portrait/simplestarrynight.png");
     }
 
     /*when showing land*/
@@ -138,7 +138,7 @@
     .cloud {
         z-index: 2;
         opacity: 0;
-        top: -100vh;
+        top: -120vh;
     }
 
     .Portrait {
@@ -289,24 +289,26 @@
         bottom: -140vh;
     }
 
-    #textTitle{
-        position: absolute;
-        top: 0;
-
-        color: #1bfc00;
-    }
-    .page {
+    #text {
         padding: 20px;
-        overflow: scroll;
         color: #1bfc00;
         width: 100%;
         height: 100%;
     }
-
-    .page1{
+    #textBox button{
         position: absolute;
-        top: 40%;
-        left: 20%;
+        top: 23px;
+        z-index: 6;
+        background-color: #055e00;
+        border: none;
+        font-weight: bold;
+    }
+    #toggleBackground{
+        left:23px;
+
+    }
+    #toggleTextbox{
+        right: 23px;
     }
 }
 
@@ -415,8 +417,8 @@
 
 }
 
-/*cloud correction and other things that change after 1000px*/
-@media screen  and (min-width: 375px) and (min-height: 701px) and (max-height: 1000px) {
+/*cloud correction, Text, and other things that change after 1000px*/
+@media screen  and (min-width: 375px) and (max-width: 749px), (min-height: 701px) and (max-height: 1000px) {
     @keyframes cloudPassingLeft {
         0% {
             left: 50%;
@@ -453,18 +455,42 @@
     }
 
     /*text boxes and their holders*/
-    #text {
+    #textBox {
         position: absolute;
-        top: 40px;
+        top: 10vh;
         left: 50%;
         transform: translate(-50%);
         height: 390px;
         width: 450px;
-        z-index: 1;
+        z-index: 5;
     }
+    .smallTextBox{
+        position: absolute;
+    }
+    .LargeTextBox{
+        display: none;
+    }
+    #textTitle{
+        position: absolute;
+        top: 29px;
+        left: 38%;
+        color: #1bfc00;
+    }
+
+
+    .page{
+        position: absolute;
+        top: 16%;
+        left: 7%;
+        max-width: 390px;
+        max-height: 300px;
+        padding: 0 13px;
+        overflow: auto;
+    }
+
 }
 
-@media screen and (min-width: 375px) and (min-height: 1001px) {
+@media screen and (min-width: 750px) and (min-height: 1001px) {
     @keyframes cloudPassingLeft {
         0% {
             left: 50%;
@@ -501,14 +527,37 @@
     }
 
     /*text boxes and their holders*/
-    #text {
+    #textBox {
         position: absolute;
-        top: 150px;
+        top: 17vh;
         left: 50%;
         transform: translate(-50%, 0);
         height: 550px;
         width: 750px;
-        z-index: 20;
+        z-index: 5;
+    }
+    .smallTextBox{
+       display: none;
+    }
+    .LargeTextBox{
+        position: absolute;
+    }
+    #textTitle{
+        position: absolute;
+        top: 40px;
+        left: 42%;
+        color: #1bfc00;
+    }
+
+
+    .page{
+        position: absolute;
+        top: 16%;
+        left: 7%;
+        width: 640px;
+        height: 420px;
+        padding: 0 13px;
+        overflow: auto;
     }
 }
 

@@ -13,17 +13,19 @@
 </head>
 <body>
 <div class="Portrait sky night">
-    <img src="assets/portrait/sun.png" class="celestial sun">
-    <img src="assets/portrait/moon.png" class="celestial moon">
-    <img src="assets/portrait/cloudday.png" class="cloud cloud1 dayCloud passingLeft">
-    <img src="assets/portrait/cloudnight.png" class="cloud cloud1 nightCloud passingLeft">
-    <img src="assets/portrait/skybox.png" class="skybox dayTime">
-    <img src="assets/portrait/ground.png" class="ground groundDay">
-    <img src="assets/portrait/groundnight.png" class="ground groundNight">
+    <img src="assets/portrait/sun.png" class="celestial sun" alt="Sun">
+    <img src="assets/portrait/moon.png" class="celestial moon" alt="Moon">
+    <div id="clouds">
+        <img src="assets/portrait/cloudday.png" class="cloud cloud1 dayCloud passingLeft" alt="cloud">
+        <img src="assets/portrait/cloudnight.png" class="cloud cloud1 nightCloud passingLeft" alt="cloud night">
+    </div>
+    <img src="assets/portrait/skybox.png" class="skybox dayTime" alt="skybox">
+    <img src="assets/portrait/ground.png" class="ground groundDay" alt="ground day">
+    <img src="assets/portrait/groundnight.png" class="ground groundNight" alt="ground night">
     <div class="options">
-        <img src="assets/portrait/cockpitDay.png" class="cockpit cockpitDay">
-        <img src="assets/portrait/cockpitNight.png" class="cockpit cockpitNight">
-        <div class="prop"><img src="assets/portrait/propeller.png" class="propeller spinning"></div>
+        <img src="assets/portrait/cockpitDay.png" class="cockpit cockpitDay" alt="cockpit day">
+        <img src="assets/portrait/cockpitNight.png" class="cockpit cockpitNight" alt="cockpit night">
+        <div class="prop"><img src="assets/portrait/propeller.png" class="propeller spinning" alt="propeller"></div>
 
         <p id="hoverable" class="guide">Hover below!</p>
         <p id="clickable" class="guide">Click below!</p>
@@ -41,11 +43,18 @@
         </div>
     </div>
 
+    <div id="textBox">
+        <img src="assets/portrait/textborder390x450.png" alt="textborder" class="smallTextBox">
+        <img src="assets/portrait/textborder550x750.png" alt="textborder" class="LargeTextBox">
+        <button id="toggleBackground">animated stars?</button><button id="toggleTextbox">enjoy the background!</button>
+        <div id="text">
+
+        </div>
+    </div>
+
 </div>
 
-<div id="text">
 
-</div>
 
 
 
