@@ -19,7 +19,7 @@ const about = $("#about");
 const skills = $("#skills");
 const work = $("#work");
 const contactMe = $("#contactMe");
-
+const windows= $("img.LargeTextBox, img.smallTextBox");
 
 landSky.click(() => {
     if (portrait.hasClass("sky")) {
@@ -120,12 +120,14 @@ const text = [
 
 function renderText(page) {
     let inner = "";
+    windows.removeClass("animate"); // remove the animation for reset
     text.forEach((part) => {
         if (page === part.id) {
             inner = "<div id=\"textTitle\" class=\"text-center\">" + part.name + "</div>" + part.field;
         }
     })
     textArea.html(inner);
+    windows.addClass("animate"); // reset animate
 }
 
 //render page 1 so it always starts on load
