@@ -1,35 +1,280 @@
+#loadingScreen {
+    position: absolute;
+    background-color: #bbbbbb;
+    width: 100vw;
+    height: 100vh;
+    opacity: 0;
+    transition-duration: 0.5s;
+}
+
+#loadingAssets {
+    position: absolute;
+    transition-duration: .5s;
+    height: 500px;
+    width: 500px;
+    top: 58%;
+    left: 50%;
+    transform: translate(-50%, -34%);
+}
+
+#loadingScreen img {
+    position: absolute;
+    left: 61%;
+    transform: translate(-50%);
+}
+
+#loadingScreen img.words {
+    top: 200px;
+    left: 47%;
+}
+
+#loadingScreen p {
+    position: absolute;
+    top: -6%;
+    left: 46%;
+    color: white;
+    height: 100px;
+    width: 200px;
+    padding: 10px;
+    background-color: black;
+    border-radius: 10%;
+}
+
+#loadingScreen #point {
+    position: absolute;
+    width: 0;
+    height: 0;
+    left: 224px;
+    top: 60px;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 15px solid black;
+    transform: rotate(45deg);
+
+}
+
+#loadingScreen.active {
+    opacity: 1;
+    z-index: 33;
+}
 .contactInfo {
     height: 32px;
     width: 32px;
 }
 
-.contactInfo:hover {
-    filter: invert(1);
-    background-color: black;
-    border-radius: 50%;
-    transform: scale(2) translateY(-10px);
-    transition: transform 250ms ease-in-out;
+.contactInfo:active {
+    transform: scale(.1);
 }
 
 
-/*didnt make the specs*/
-@media screen and (max-width: 374px), (max-height: 700px) {
+/*mobile nav gets scrunched after 300px. fix action*/
+@media screen and (max-width: 300px) {
+
+    #home, #dayNight, #about, #skills, #work {
+        height: 40px;
+        width: 60px;
+        font-size: 10px;
+        padding: 12px 0;
+    }
+
+    #contactMe {
+        height: 40px;
+        width: 60px;
+        padding: 9px 0;
+        font-size: 9px;
+    }
+
+}
+@media screen and (min-width: 301px) and (max-width: 449px),(max-height: 700px){
+    #home, #dayNight, #about, #skills, #work{
+        padding: 15px 5px;
+        height: 60px;
+        width: 90px;
+    }
+    #contactMe{
+        padding: 9px 5px;
+        height: 60px;
+        width: 90px;
+        font-size: 13px;
+    }
+
+
+}
+
+/*screen didnt make the specs*/
+@media screen and (max-width: 449px), (max-height: 700px), (max-width: 374px) and (max-height: 700px) {
     .Portrait {
+        height: 100%;
+        width: 100%;
+    }
+
+    .Portrait > img, #moonBack, #clouds, .cockpit, .prop, #hoverable, #clickable, #clock {
         display: none;
     }
 
-    body {
-        background-color: green;
+    .mobile {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        height: 20px;
+        width: 90vw;
+        transform: translateX(-50%);
+        text-align: center;
     }
 
-    .text {
-        visibility: visible;
-        margin: auto;
+    .options {
+        position: absolute;
+        z-index: 3;
+        height: 200px;
+        width: 93vw;
+        top: calc(100vh - 10%);
+        left: 50%;
+        transform: translateX(-50%);
+        transition: 1.5s;
+    }
+
+    .options #buttons {
+        opacity: 0;
+        transition-duration: 1s;
+    }
+
+    .options.active {
+        top: calc(100vh - 230px);
+    }
+
+    .options.active #buttons {
+        opacity: 1;
+
+    }
+
+    #buttons div {
+        position: absolute;
+        font-weight: bold;
+        text-align: center;
+
+
+    }
+
+    #home {
+        left: 4%;
+        top: 50px;
+    }
+
+    #about {
+        left: 4%;
+        top: 120px;
+    }
+
+    #skills {
+        left: 35%;
+        top: 120px;
+    }
+
+    #work {
+        left: 35%;
+        top: 50px;
+    }
+
+    #contactMe {
+        right: 4%;
+        top: 50px;
+    }
+
+    #dayNight {
+        right: 4%;
+        top: 120px;
+    }
+
+    .Portrait.day .dayText, .Portrait.night .nightText {
+        display: none;
+    }
+
+    #textBox {
+        height: 100vh;
+        width: 100vw;
+    }
+
+    #textBox>img {
+        position: absolute;
+        height: 100vh;
+        width: 100vw;
+    }
+
+    #text {
+        position: absolute;
+        height: 60%;
+        width: 93%;
+        left: 50%;
+        transform: translate(-50%, 0);
+    }
+
+    .page {
+        position: absolute;
+        top: 40px;
+        height: calc(90vh - 80px);
+        width: 100%;
+        padding-bottom: 10px;
+        padding-right: 5px;
+        padding-left: 10px;
+        overflow: auto;
+    }
+
+    body {
+        position: fixed;
+    }
+
+
+    .Portrait.day img.dayTextBox, .Portrait.night img.nightTextBox {
+        opacity: 1;
+    }
+
+    .Portrait.night img.dayTextBox, .Portrait.day img.nightTextBox {
+        opacity: 0;
+    }
+
+    .Portrait.night .mobile, .Portrait.night #buttons div {
+        background-color: #1bfc00;
+        color: black;
+    }
+
+    .Portrait.night .options.active {
+        background-color: #000018;
+    }
+
+    .Portrait.night #text, .Portrait.night a  {
+        color: #1bfc00;
+    }
+
+    .Portrait.day #text, .Portrait.day a {
+        color: black;
+    }
+
+    .Portrait.day .options.active {
+        background-color: white;
+    }
+
+    .Portrait.day .mobile, .Portrait.day #buttons div {
+        background-color: #150d0d;
+        color: #fdfdfd;
+    }
+    .Portrait.day .page5 img{
+    filter: invert(1);
     }
 }
 
+
+
+
 /*bare minimum for optimal portrait*/
-@media screen and (min-width: 375px) and (min-height: 701px) {
+@media screen and (min-width: 450px) and (min-height: 701px) {
+
+    .options div.mobile {
+        display: none;
+    }
+
+    #loadingAssets {
+        top: 40%;
+    }
 
     /*animation*/
     .spinning {
@@ -37,11 +282,11 @@
     }
 
     .passingLeft {
-        animation: 6s ease-in-out cloudPassingLeft;
+        animation: 6s ease-out cloudPassingLeft;
     }
 
     .passingRight {
-        animation: 6s ease-in-out cloudPassingRight;
+        animation: 6s ease-out cloudPassingRight;
     }
 
     @keyframes spinning {
@@ -83,34 +328,53 @@
         }
     }
     @keyframes activate {
-        0%{
+        0% {
             opacity: 0;
         }
-        100%{
+        100% {
             opacity: 1;
         }
     }
     @keyframes pullUp {
-        0%{
+        0% {
             height: 1%;
             width: 0;
         }
-        50%{
+        50% {
             height: 1%;
             width: 100%;
         }
-        100%{
+        100% {
             height: 100%;
             width: 100%;
         }
-    }    
-
+    }
+    @keyframes pullOut {
+        0% {
+            height: 100%;
+            width: 100%;
+        }
+        50% {
+            height: 1%;
+            width: 100%;
+        }
+        100% {
+            height: 1%;
+            width: 0;
+        }
+    }
     body {
         position: fixed;
         background-color: black;
         background-position: center;
-       /* background-image: url("/assets/portrait/starnight/starrynightend.gif");*/
+    }
+
+    body.still {
         background-image: url("/assets/portrait/simplestarrynight.png");
+    }
+
+    body.animated {
+        background-image: url("/assets/portrait/starnight/starrynightend.gif");
     }
 
     /*when showing land*/
@@ -152,10 +416,22 @@
     .celestial {
         right: 10px;
         top: 0;
-        z-index: 1;
         height: 200px;
         width: 200px;
+        z-index: 2;
     }
+
+    #moonBack {
+        position: absolute;
+        right: -12px;
+        top: -25px;
+        z-index: 0;
+        background-color: black;
+        height: 250px;
+        width: 250px;
+        border-radius: 50%;
+    }
+
 
     .cloud {
         z-index: 2;
@@ -223,7 +499,7 @@
     }
 
 
-    .options #home {
+    #home {
         left: 32.5%;
         bottom: 39.5%;
         height: 64px;
@@ -231,7 +507,7 @@
         padding: 18px 10px;
     }
 
-    .options #skills {
+    #skills {
         left: 46.3%;
         bottom: 27.35%;
         height: 63px;
@@ -240,7 +516,7 @@
 
     }
 
-    .options #work {
+    #work {
         left: 46.3%;
         bottom: 39.5%;
         height: 64px;
@@ -248,7 +524,7 @@
         padding: 18px 10px;
     }
 
-    .options #contactMe {
+    #contactMe {
         right: 31%;
         bottom: 39.3%;
         height: 65px;
@@ -257,7 +533,7 @@
         font-size: 15px;
     }
 
-    .options #about {
+    #about {
         left: 32.44%;
         bottom: 27.35%;
         height: 63px;
@@ -265,7 +541,7 @@
         padding: 18px 10px;
     }
 
-    .options #dayNight {
+    #dayNight {
         right: 31%;
         bottom: 27.35%;
         height: 62px;
@@ -293,18 +569,22 @@
         animation: 4s 1 grounded;
     }
 
+    #clouds {
+        transition-duration: 2s;
+    }
 
     /*switch between night and day for all things*/
-    .Portrait.day .groundNight, .Portrait.day .moon, .Portrait.night .sun, .Portrait.day .nightCloud, .Portrait.night .dayCloud, .Portrait.day .cockpitNight, .Portrait.night .dayTextBox, .Portrait.day .nightTextBox{
+    .Portrait.day .groundNight, .Portrait.day .moon, .Portrait.night .sun, .Portrait.day .nightCloud, .Portrait.night .dayCloud, .Portrait.day .cockpitNight, .Portrait.night .dayTextBox, .Portrait.day .nightTextBox, .Portrait.land #clouds {
         opacity: 0;
     }
 
-    .Portrait.night .groundNight, .Portrait.day .sun, .Portrait.night .moon, .Portrait.day .dayCloud, .Portrait.night .nightCloud, .Portrait.night .cockpitNight,.Portrait.day .dayTextBox, .Portrait.night .nightTextBox {
+    .Portrait.night .groundNight, .Portrait.day .sun, .Portrait.night .moon, .Portrait.day .dayCloud, .Portrait.night .nightCloud, .Portrait.night .cockpitNight, .Portrait.day .dayTextBox, .Portrait.night .nightTextBox {
         opacity: 1;
     }
 
     .Portrait.day .skybox {
         bottom: 0;
+        z-index: 1;
     }
 
     .Portrait.night .skybox {
@@ -317,13 +597,17 @@
         width: 100%;
         height: 100%;
     }
-    .Portrait.night #textBox{
+
+    .Portrait.night #textBox {
         color: #1bfc00;
     }
-    .Portrait.day #textBox{
+
+    .Portrait.day #textBox {
         color: #000000;
     }
-    #textBox button{
+
+
+    #textBox button {
 
         position: absolute;
         top: 23px;
@@ -331,29 +615,91 @@
         border: none;
         font-weight: bold;
     }
-    .Portrait.night #textBox button{
+
+    .Portrait.night #textBox button {
         color: #000000;
         background-color: #1bfc00;
     }
-    .Portrait.day #textBox button{
+
+    .Portrait.night #textBox a {
+        color: #9cee93;
+    }
+
+    .Portrait.day #textBox a {
+        color: #1a140a;
+    }
+
+    .Portrait.day #toggleBackground, .toggle {
         display: none;
     }
 
-    #toggleBackground{
-        left:23px;
+    .Portrait.day #toggleTextbox {
+        color: white;
+        background-color: #1a140a;
+    }
+
+    #toggleBackground {
+        left: 23px;
 
     }
-    #toggleTextbox{
+
+    #toggleTextbox {
         right: 23px;
     }
-    #textBox div{
-        animation: 1s 1 activate forwards;
-    opacity: 0;
+
+    #textBox img {
+        transition-duration: 0.5s;
     }
+
+    #textBox img.on {
+        animation: .25s 1 pullUp forwards;
+    }
+
+    #textBox img.off {
+        animation: .25s 1 pullOut forwards;
+    }
+
+
+    #textBox div {
+        animation: 1s 1 activate forwards;
+        opacity: 0;
+    }
+
+
+    #OpenTextBox {
+        position: absolute;
+        top: 17vh;
+        left: 50%;
+        transform: translate(-50%);
+        animation: 4s infinite highlight;
+        z-index: 2;
+    }
+
+    .Portrait.day #OpenTextBox {
+        color: black;
+    }
+
+    .contactInfo:hover {
+        transform: scale(2) translateY(-10px);
+        transition: transform 150ms;
+    }
+
+    .Portrait.night #OpenTextBox {
+        color: #1bfc00;
+    }
+
+    .Portrait.day .contactInfo {
+        filter: invert(1);
+        background-color: black;
+        border-radius: 50%;
+    }
+
+
+
 }
 
 /*hover effects for portrait*/
-@media screen  and (min-width: 375px) and (min-height: 701px) and (hover: hover) {
+@media screen  and (min-width: 450px) and (min-height: 701px) and (hover: hover) {
     /*on hover, all move up*/
     .Portrait.sky .options:hover {
         bottom: -70px;
@@ -383,10 +729,29 @@
         color: black;
     }
 
+    .Portrait.night #textBox button:hover {
+        color: #000000;
+        background-color: #206517;
+    }
+
+    .Portrait.day #textBox button:hover {
+        color: white;
+        background-color: #4f4d48;
+    }
+
+    .Portrait.night #textBox button:active {
+        color: #1bfc00;
+        background-color: #000018;
+    }
+
+    .Portrait.day #textBox button:active {
+        color: #000000;
+        background-color: white;
+    }
 }
 
 /*non-hover effects for portrait*/
-@media screen  and (min-width: 375px) and (min-height: 701px) and (hover: none) {
+@media screen  and (min-width: 450px) and (min-height: 701px) and (hover: none) {
     /*on hover, all move up*/
     .Portrait.sky .options.active {
         bottom: -70px;
@@ -404,53 +769,25 @@
     #hoverable {
         display: none;
     }
+
+    #buttons div:active {
+        background-color: #1bfc00;
+        color: black;
+    }
+
+    .Portrait.night #textBox button:active {
+        color: #1bfc00;
+        background-color: #000018;
+    }
+
+    .Portrait.day #textBox button:active {
+        color: #000000;
+        background-color: white;
+    }
 }
 
-/*when screen is wider than 700px theres enough room to make things look more spaced out*/
+/*skybox fix after 700x700*/
 @media screen and (min-width: 700px) and (min-height: 701px) {
-    .passingLeft {
-        animation: 6s ease-in-out cloudPassingLeft;
-    }
-
-    .passingRight {
-        animation: 6s ease-in-out cloudPassingRight;
-    }
-
-    @keyframes cloudPassingLeft {
-        0% {
-            left: 50%;
-            top: -5%;
-            transform: translateX(-50%) scale(0);
-        }
-        50% {
-            left: 50%;
-            top: -5%;
-            transform: translateX(-50%) scale(1);
-        }
-        100% {
-            left: -110%;
-            top: -15%;
-            transform: translateX(-50%) scale(2);
-        }
-    }
-    @keyframes cloudPassingRight {
-        0% {
-            left: 50%;
-            top: -5%;
-            transform: translateX(-50%) scale(0);
-        }
-        50% {
-            left: 50%;
-            top: -5%;
-            transform: translateX(-50%) scale(1);
-        }
-        100% {
-            left: 220%;
-            top: -15%;
-            transform: translateX(-50%) scale(2);
-        }
-    }
-    /*bigger screen, bigger cloud!*/
     .skybox {
         width: 100%;
     }
@@ -458,20 +795,20 @@
 }
 
 /*cloud correction, Text, and other things that change after 900px*/
-@media screen  and (min-width: 375px) and (max-width: 749px), (min-height: 701px) and (max-height: 900px) {
+@media screen  and (min-width: 450px) and (max-width: 749px) and (min-height: 701px), (min-width: 450px) and (min-height: 701px) and (max-height: 900px) {
     @keyframes cloudPassingLeft {
         0% {
             left: 50%;
-            top: -40%;
+            top: -20%;
             transform: translateX(-50%) scale(0);
         }
-        50% {
-            left: 50%;
-            top: -10%;
-            transform: translateX(-50%) scale(0.8);
+        40% {
+            left: 40%;
+            top: 0;
+            transform: translateX(-50%) scale(.5);
         }
         100% {
-            left: -200%;
+            left: -100%;
             top: 200%;
             transform: translateX(-50%) scale(3);
         }
@@ -482,14 +819,14 @@
             top: -20%;
             transform: translateX(-50%) scale(0);
         }
-        50% {
-            left: 50%;
-            top: -20%;
-            transform: translateX(-50%) scale(0.8);
+        40% {
+            left: 55%;
+            top: 0;
+            transform: translateX(-50%) scale(.5);
         }
         100% {
-            left: 300%;
-            top: -30%;
+            left: 150%;
+            top: 200%;
             transform: translateX(-50%) scale(2);
         }
     }
@@ -504,20 +841,23 @@
         width: 450px;
         z-index: 5;
     }
-    .smallTextBox{
+
+    .smallTextBox {
         position: absolute;
     }
-    .LargeTextBox{
+
+    .LargeTextBox {
         display: none;
     }
-    #textTitle{
+
+    #textTitle {
         position: absolute;
         top: 50px;
         left: 38%;
     }
 
 
-    .page{
+    .page {
         position: absolute;
         top: 19%;
         left: 7%;
@@ -536,14 +876,14 @@
             top: -10%;
             transform: translateX(-50%) scale(0);
         }
-        50% {
-            left: 50%;
+        40% {
+            left: 35%;
             top: 10%;
-            transform: translateX(-50%) scale(1.2);
+            transform: translateX(-50%) scale(.8);
         }
         100% {
-            left: -100%;
-            top: 200%;
+            left: -150%;
+            top: 220%;
             transform: translateX(-50%) scale(4);
         }
     }
@@ -553,14 +893,14 @@
             top: -10%;
             transform: translateX(-50%) scale(0);
         }
-        50% {
-            left: 50%;
+        40% {
+            left: 65%;
             top: 10%;
-            transform: translateX(-50%) scale(1.2);
+            transform: translateX(-50%) scale(.8);
         }
         100% {
-            left: 300%;
-            top: 200%;
+            left: 150%;
+            top: 220%;
             transform: translateX(-50%) scale(4);
         }
     }
@@ -575,20 +915,23 @@
         width: 750px;
         z-index: 5;
     }
-    .smallTextBox{
-       display: none;
+
+    .smallTextBox {
+        display: none;
     }
-    .LargeTextBox{
+
+    .LargeTextBox {
         position: absolute;
     }
-    #textTitle{
+
+    #textTitle {
         position: absolute;
         top: 40px;
         left: 42%;
     }
 
 
-    .page{
+    .page {
         position: absolute;
         top: 16%;
         left: 7%;

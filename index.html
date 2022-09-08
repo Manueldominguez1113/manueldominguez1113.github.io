@@ -11,18 +11,27 @@
           integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
     <link rel="stylesheet" href="CSS/mainStyle.css">
 </head>
-<body>
+<body class="still">
+<div id="loadingScreen" class="active">
+    <div id="loadingAssets">
+        <img src="assets/loadingscreen/loadingscreen.gif" class="load" alt="planeDeparting">
+        <img src="assets/loadingscreen/loadingtext.gif" class="words" alt="Taking Off...">
+        <p>"Dicey45, cleared for takeoff runway 33 Left, wind 010 at 14"</p>
+        <div id="point"></div>
+    </div>
+</div>
+
 <div class="Portrait sky night">
     <img src="assets/portrait/sun.png" class="celestial sun" alt="Sun">
     <img src="assets/portrait/moon.png" class="celestial moon" alt="Moon">
+    <div id="moonBack"></div>
     <div id="clouds">
-        <img src="assets/portrait/cloudday.png" class="cloud cloud1 dayCloud passingLeft" alt="cloud">
-        <img src="assets/portrait/cloudnight.png" class="cloud cloud1 nightCloud passingLeft" alt="cloud night">
+
     </div>
     <img src="assets/portrait/skybox.png" class="skybox dayTime" alt="skybox">
     <img src="assets/portrait/ground.png" class="ground groundDay" alt="ground day">
     <img src="assets/portrait/groundnight.png" class="ground groundNight" alt="ground night">
-    <div class="options">
+    <div class="options"><div class="mobile">NAVIGATION</div>
         <img src="assets/portrait/cockpitDay.png" class="cockpit cockpitDay" alt="cockpit day">
         <img src="assets/portrait/cockpitNight.png" class="cockpit cockpitNight" alt="cockpit night">
         <div class="prop"><img src="assets/portrait/propeller.png" class="propeller spinning" alt="propeller"></div>
@@ -44,21 +53,19 @@
     </div>
 
     <div id="textBox">
-        <img src="assets/portrait/textborderday390x450.png" alt="textborder" class="smallTextBox dayTextBox animate">
-        <img src="assets/portrait/textborderday550x750.png" alt="textborder" class="LargeTextBox dayTextBox animate">
-        <img src="assets/portrait/textborder390x450.png" alt="textborder" class="smallTextBox nightTextBox animate">
-        <img src="assets/portrait/textborder550x750.png" alt="textborder" class="LargeTextBox nightTextBox animate">
-        <button id="toggleBackground">animated stars?</button><button id="toggleTextbox">enjoy the background!</button>
+        <img src="assets/portrait/textborderday390x450.png" alt="textborder" class="smallTextBox dayTextBox on">
+        <img src="assets/portrait/textborderday550x750.png" alt="textborder" class="LargeTextBox dayTextBox on">
+        <img src="assets/portrait/textborder390x450.png" alt="textborder" class="smallTextBox nightTextBox on">
+        <img src="assets/portrait/textborder550x750.png" alt="textborder" class="LargeTextBox nightTextBox on">
+        <button id="toggleBackground">animated stars?</button>
+        <button id="toggleTextbox">X</button>
         <div id="text">
 
         </div>
     </div>
+    <div id="OpenTextBox"><p>Click on the aircraft/navigation to return the text box!</p></div>
 
 </div>
-
-
-
-
 
 
 <script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
