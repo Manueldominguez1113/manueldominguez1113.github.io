@@ -95,7 +95,7 @@ const text = [
     {
         id: 1,
         name: 'Hello World!',
-        field: "<div class=\"page page1 \"> <!--home-->\n" +
+        field: "<div class=\"page page1 goScroll\"> <!--home-->\n" +
             "        <p class=\"line1\">I am... <span class='pt1'>Manuel</span> <span class='pt2'>Alexander</span> <span class='pt3'>Dominguez</span></p>\n" +
             "        <p class=\"line2\">The M.A.D. Developer!</p>\n" +
             "        <p class=\"line3\">Full-Stack Dev || Game Dev || Air Traffic Controller</p>\n" +
@@ -105,7 +105,7 @@ const text = [
     {
         id: 2,
         name: 'About Me',
-        field: " <div class=\"page page2  \"> <!--about-->\n" +
+        field: " <div class=\"page page2 goScroll\"> <!--about-->\n" +
             "        <p class=\"line1\">I am an Air-force veteran, spending 10 years as an Air Traffic Controller, now following a dream of full stack developer\n" +
             "        interested in creating for you! Be it new and exciting websites, artistic and unique approaches, to working on\n" +
             "        backend functionality and fluid\n" +
@@ -119,7 +119,7 @@ const text = [
     {
         id: 3,
         name: 'My Skills',
-        field: "    <div class=\"page page3  \"> <!--skills combine with one of the smaller paragraphs-->\n" +
+        field: "    <div class=\"page page3 goScroll\"> <!--skills combine with one of the smaller paragraphs-->\n" +
             "        I'm proficient in C#, JavaScript, Java SE, Java EE (Servlets, JSP), MySQL, Test-Driven\n" +
             "Development, Spring, Bootstrap, jQuery, Thymeleaf, HTML, CSS, and Unity so far. but I am continuing to learn\n" +
             "        and am excited to expand my resources!\n" +
@@ -128,14 +128,14 @@ const text = [
     {
         id: 4,
         name: 'My Work',
-        field: "  <div class=\"page page4 \"> <!--work-->\n" +
+        field: "  <div class=\"page page4 goScroll\"> <!--work-->\n" +
             "        here, I will link to you a window of my work so far growing in code up and then beyond as I improve my skills.\n" +
             "    </div>"
     },
     {
         id: 5,
         name: 'Contact Me',
-        field: " <div class=\"page page5\" id=\"contact\"> <!--contact info-->\n" +
+        field: " <div class=\"page page5 goScroll\" id=\"contact\"> <!--contact info-->\n" +
             "        <p id=\"available\" class=\"announcement\">I'm avaliable for hire!</p> <p id=\"hired\" class=\"announcement\">I'm currently employed! if someone sent you here looking for a job it most likely wasn't me!</p><p id=\"freeLance\" class=\"announcement\">I'm Looking to freelance for YOU!</p><p id=\"main\" class=\"announcement\">please contact me via these links if you wish to connect with me! I look forward to hearing from you!</p>    \n" +
             "        <p class=\"line1\"><a href=\"https://github.com/Manueldominguez1113\"><img class=\"contactInfo\" src=\"assets/PNG/GitHub-Mark-Light-32px.png\" alt=\"gitHub\"><span> My Github</span></a></p>\n" +
             "        <!--Github/Manueldominguez1113-->\n" +
@@ -206,13 +206,12 @@ function fullScren(element){
 
 let clouds = $("#clouds");
 //cloud generator
-setInterval(randomClouds, 6000);
+setInterval(randomClouds, 3500);
 
 function randomClouds() {
-    let lR = Math.random();
+    let lR = Math.floor(Math.random()*(3-1)+1);
     let cloudNum = Math.floor(Math.random() * (5 - 1) + 1);
-    let left = lR === 1;
-
+    let left =  lR === 1;
     clouds.html(" "); //make sure clear clouds
 
     clouds.html(cloudGenerator(cloudNum, left));
@@ -223,11 +222,11 @@ function cloudGenerator(number, left) {
     switch (number) {
         case(1): {
             if (left) {
-                return "<img src=\"assets/portrait/clouds/cloudday.png\" class=\"cloud cloud1 dayCloud passingLeft\" alt=\"cloud\">\n" +
-                    "<img src=\"assets/portrait/clouds/cloudnight.png\" class=\"cloud cloud1 nightCloud passingLeft\" alt=\"cloud night\">";
+                return "<img src=\"assets/portrait/clouds/cloudday3.png\" class=\"cloud cloud1 dayCloud passingLeft\" alt=\"cloud\">\n" +
+                    "<img src=\"assets/portrait/clouds/cloudnight3.png\" class=\"cloud cloud1 nightCloud passingLeft\" alt=\"cloud night\">";
             } else {
-                return "<img src=\"assets/portrait/clouds/cloudday.png\" class=\"cloud cloud1 dayCloud passingRight\" alt=\"cloud\">\n" +
-                    "<img src=\"assets/portrait/clouds/cloudnight.png\" class=\"cloud cloud1 nightCloud passingRight\" alt=\"cloud night\">";
+                return "<img src=\"assets/portrait/clouds/cloudday3.png\" class=\"cloud cloud1 dayCloud passingRight\" alt=\"cloud\">\n" +
+                    "<img src=\"assets/portrait/clouds/cloudnight3.png\" class=\"cloud cloud1 nightCloud passingRight\" alt=\"cloud night\">";
             }
         }
         case(2): {
@@ -241,23 +240,14 @@ function cloudGenerator(number, left) {
         }
         case(3): {
             if (left) {
-                return "<img src=\"assets/portrait/clouds/cloudday3.png\" class=\"cloud cloud1 dayCloud passingLeft\" alt=\"cloud\">\n" +
-                    "<img src=\"assets/portrait/clouds/cloudnight3.png\" class=\"cloud cloud1 nightCloud passingLeft\" alt=\"cloud night\">";
+                return "<img src=\"assets/portrait/clouds/cloudday.png\" class=\"cloud cloud1 dayCloud passingLeft\" alt=\"cloud\">\n" +
+                    "<img src=\"assets/portrait/clouds/cloudnight.png\" class=\"cloud cloud1 nightCloud passingLeft\" alt=\"cloud night\">";
             } else {
-                return "<img src=\"assets/portrait/clouds/cloudday3.png\" class=\"cloud cloud1 dayCloud passingRight\" alt=\"cloud\">\n" +
-                    "<img src=\"assets/portrait/clouds/cloudnight3.png\" class=\"cloud cloud1 nightCloud passingRight\" alt=\"cloud night\">";
+                return "<img src=\"assets/portrait/clouds/cloudday.png\" class=\"cloud cloud1 dayCloud passingRight\" alt=\"cloud\">\n" +
+                    "<img src=\"assets/portrait/clouds/cloudnight.png\" class=\"cloud cloud1 nightCloud passingRight\" alt=\"cloud night\">";
             }
         }
         case(4): {
-            if (left) {
-                return "<img src=\"assets/portrait/clouds/cloudday4.png\" class=\"cloud cloud1 dayCloud passingLeft\" alt=\"cloud\">\n" +
-                    "<img src=\"assets/portrait/clouds/cloudnight4.png\" class=\"cloud cloud1 nightCloud passingLeft\" alt=\"cloud night\">";
-            } else {
-                return "<img src=\"assets/portrait/clouds/cloudday4.png\" class=\"cloud cloud1 dayCloud passingRight\" alt=\"cloud\">\n" +
-                    "<img src=\"assets/portrait/clouds/cloudnight4.png\" class=\"cloud cloud1 nightCloud passingRight\" alt=\"cloud night\">";
-            }
-        }
-        case(5): {
             if (left) {
                 return "<img src=\"assets/portrait/clouds/cloudday5.png\" class=\"cloud cloud1 dayCloud passingLeft\" alt=\"cloud\">\n" +
                     "<img src=\"assets/portrait/clouds/cloudnight5.png\" class=\"cloud cloud1 nightCloud passingLeft\" alt=\"cloud night\">";
@@ -266,6 +256,15 @@ function cloudGenerator(number, left) {
                     "<img src=\"assets/portrait/clouds/cloudnight5.png\" class=\"cloud cloud1 nightCloud passingRight\" alt=\"cloud night\">";
             }
         }
+       /* case(5): { hate the fifth cloud...
+            if (left) {
+                return "<img src=\"assets/portrait/clouds/cloudday4.png\" class=\"cloud cloud1 dayCloud passingLeft\" alt=\"cloud\">\n" +
+                    "<img src=\"assets/portrait/clouds/cloudnight4.png\" class=\"cloud cloud1 nightCloud passingLeft\" alt=\"cloud night\">";
+            } else {
+                return "<img src=\"assets/portrait/clouds/cloudday4.png\" class=\"cloud cloud1 dayCloud passingRight\" alt=\"cloud\">\n" +
+                    "<img src=\"assets/portrait/clouds/cloudnight4.png\" class=\"cloud cloud1 nightCloud passingRight\" alt=\"cloud night\">";
+            }
+        }*/
 
 
     }
