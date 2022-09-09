@@ -46,7 +46,7 @@ dayNight.click(() => {
 //on touchscreen, will give active class to option the menu, doesn't matter in hover capable devices.
 options.click(() => {
     options.toggleClass("active");
-    if(textBox.hasClass("toggle")) {
+    if (textBox.hasClass("toggle")) {
         textArea.removeClass("toggle");
         textBox.removeClass("toggle");
         $("#OpenTextBox").addClass("toggle");
@@ -58,17 +58,17 @@ options.click(() => {
 toggleTextBox.click(() => {
     windows.toggleClass("on off");
     textArea.addClass("toggle");
-    setTimeout(()=>{
+    setTimeout(() => {
         textBox.addClass("toggle");
         $("#OpenTextBox").removeClass("toggle");
-    },150);
+    }, 150);
 
 })
 toggleBackGround.click(() => {
     $("body").toggleClass("still animated");
-    if($("body").hasClass("still")){
+    if ($("body").hasClass("still")) {
         toggleBackGround.html("Animated Stars?");
-    } else{
+    } else {
         toggleBackGround.html("Stop Stars?");
     }
 })
@@ -150,12 +150,32 @@ const text = [
 
 function renderText(page) {
     let inner = "";
+
     text.forEach((part) => {
-        if (page === part.id) {
+        if (!(page === 4) && page === part.id) {
             inner = "<div id=\"textTitle\" class=\"text-center\">" + part.name + "</div>" + part.field;
+            return textArea.html(inner);
+        }
+        if (page === 4 && page === part.id) {
+            let cards="";
+            inner = "<div id=\"textTitle\" class=\"text-center\">" + part.name + "</div>"
+
+            $.ajax('./assets/JSON/info.json').done((data) => {
+                data.forEach((project) => {
+                    cards += "<div class='ProjectCard'><div class='projectTitle text-center'><a href=\""+project.link+"\">" + project.title + "</a></div>"+
+                        "<img class='projectImage' src=\"./assets/PNG/"+project.image+"\" alt=\""+project.image+"\">"+
+                        "<div class='projectdescription'>"+ project.description+ "</div></div>";
+                })
+                
+                    inner+= "    <div class=\"page page4 d-flex flex-row justify-content-between \"> <!--work-->\n" +
+                        cards +
+                        "    </div>"
+                    return textArea.html(inner);
+                
+
+            })
         }
     })
-    textArea.html(inner);
 }
 
 //render page 1 so it always starts on load
