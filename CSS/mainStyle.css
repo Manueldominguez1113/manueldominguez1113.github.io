@@ -66,6 +66,23 @@
     transform: scale(.1);
 }
 
+#freeLance, #hired{ /* available; now I can just swiftly change the message to whatever is current!*/
+    display: none;
+}
+
+.announcement{
+    position: absolute;
+}
+#available, #freeLance, #hired{
+    top: 0;
+    left: 47%;
+    transform: translateX(-50%);
+}
+#main.announcement{
+    top: 20px;
+    max-height: 73px;
+    overflow: auto;
+}
 
 /*mobile nav gets scrunched after 300px. fix action*/
 @media screen and (max-width: 330px)  {
@@ -77,11 +94,78 @@
         padding: 12px 0;
     }
 
+    /*home is page 1*/
+    .page1 .line1{
+        position: absolute;
+        top: -6px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .page1 .line1 span{
+        position: absolute;
+        font-size: 25px;
+        font-weight: bold;
+    }
+    .page1 .line1 span.pt1{
+        top: calc(10px + 1vh);
+        left: 8vw;
+        transform: translateX(-100%);
+    }
+    .page1 .line1 span.pt2{
+        top: calc(30px + 3vh);
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .page1 .line1 span.pt3{
+        top: calc(50px + 5vh);
+        right: 8vw;
+        transform: translateX(75%);
+    }
+
+    .page1 .line2{
+        position: absolute;
+        top: calc(90px + 5vh);
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        text-align: center;
+    }
+    .page1 .line3{
+        position: absolute;
+        font-size: 18px;
+        top: calc(5vh + 120px);
+        left: 50%;
+        width: 100%;
+        text-align: center;
+        transform: translateX(-50%);
+    }
+    .line4{
+        position: absolute;
+        top: calc(34px - 1vh);
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        text-align: center;
+        font-weight: bold;
+    }
+
     #contactMe {
         height: 40px;
         width: 60px;
         padding: 9px 0;
         font-size: 9px;
+    }
+    .page5 .line1{
+        position: absolute;
+        top: 110px;
+    }
+    .page5 .line2{
+        position: absolute;
+        top: 160px;
+    }
+    .page5 .line3{
+        position: absolute;
+        top: 210px;
     }
 
 }
@@ -97,7 +181,78 @@
         width: 90px;
         font-size: 13px;
     }
+    /*home is page 1*/
+    .page1 .line1{
+        position: absolute;
+        top: -6px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .page1 .line1 span{
+        position: absolute;
+        font-size: 40px;
+        font-weight: bold;
+    }
+    .page1 .line1 span.pt1{
+        top: 20px;
+        left: 8vw;
+        transform: translateX(-100%);
+    }
+    .page1 .line1 span.pt2{
+        top: 75px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .page1 .line1 span.pt3{
+        top: 130px;
+        right: 8vw;
+        transform: translateX(75%);
+    }
 
+    .page1 .line2{
+        position: absolute;
+        top: 200px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        text-align: center;
+    }
+    .page1 .line3{
+        position: absolute;
+        font-size: 18px;
+        top: calc(8vh + 200px);
+        left: 50%;
+        width: 100%;
+        text-align: center;
+        transform: translateX(-50%);
+    }
+    .line4{
+        position: absolute;
+        top: calc(34px - 1vh);
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        text-align: center;
+        font-weight: bold;
+    }
+
+    /*contactMe is page 5*/
+     .page5 .line1{
+        position: absolute;
+        top: 110px;
+         left: 15px;
+    }
+    .page5 .line2{
+        position: absolute;
+        top: 110px;
+        right: 15px;
+    }
+    .page5 .line3{
+        position: absolute;
+        top: 160px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
 
 }
 
@@ -120,7 +275,7 @@
         width: 100%;
     }
 
-    .Portrait > img, #moonBack, #clouds, .cockpit, .prop, #hoverable, #clickable, #clock {
+    .Portrait > img, .webText, #moonBack, #clouds, .cockpit, .prop, #hoverable, #clickable, #clock {
         display: none;
     }
 
@@ -233,7 +388,9 @@
         padding-left: 10px;
         overflow: auto;
     }
-
+    .page1{
+        top: 80px;
+    }
     body {
         position: fixed;
     }
@@ -275,7 +432,7 @@
     .Portrait.day .page5 img{
     filter: invert(1);
     }
-    .mobile{
+    .mobile, .notice{
         animation: 2s infinite notice;
     }
 }
@@ -286,7 +443,7 @@
 /*bare minimum for optimal portrait*/
 @media screen and (min-width: 450px) and (min-height: 701px) {
 
-    .options div.mobile {
+    .options div.mobile, .mobileText {
         display: none;
     }
 
@@ -385,6 +542,7 @@
         position: fixed;
         background-color: black;
         background-position: center;
+        transition-duration: 1.5s;
     }
 
     body.still {
@@ -697,7 +855,7 @@
         color: black;
     }
 
-    .contactInfo:hover {
+    .line1:hover .contactInfo, .line2:hover .contactInfo, .line3:hover .contactInfo {
         transform: scale(2) translateY(-10px);
         transition: transform 150ms;
     }
@@ -712,6 +870,26 @@
         border-radius: 50%;
     }
 
+
+
+    /*contactMe is page 5*/
+
+    .page5 .line1{
+        position: absolute;
+        top: 90px;
+        left: 23px;
+    }
+    .page5 .line2{
+        position: absolute;
+        top: 90px;
+        right: 23px;
+    }
+    .page5 .line3{
+        position: absolute;
+        top: 150px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
 
 
 }
@@ -765,6 +943,9 @@
     .Portrait.day #textBox button:active {
         color: #000000;
         background-color: white;
+    }
+    p a:hover{
+        text-decoration: #1bfc00 underline;
     }
 }
 
@@ -879,11 +1060,54 @@
         position: absolute;
         top: 19%;
         left: 7%;
-        max-width: 390px;
-        max-height: 290px;
+        width: 390px;
+        height: 290px;
         padding: 0 13px;
         overflow: auto;
     }
+    /*home is page 1*/
+    .page1 .line1{
+        position: absolute;
+        top: -6px;
+        left: 44%;
+        transform: translateX(-50%);
+    }
+    .page1 .line1 span{
+        position: absolute;
+        font-size: 40px;
+        font-weight: bold;
+    }
+    .page1 .line1 span.pt1{
+        top: 20px;
+        left: 0;
+        transform: translateX(-100%);
+    }
+    .page1 .line1 span.pt2{
+        top: 75px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .page1 .line1 span.pt3{
+        top: 130px;
+        left: 0;
+        transform: translateX(10%);
+    }
+
+    .page1 .line2{
+        position: absolute;
+        top: 190px;
+        left: 25px;
+    }
+    .page1 .line3{
+        position: absolute;
+        font-size: 18px;
+        top: 250px;
+        left: 50%;
+        width: 100%;
+        text-align: center;
+        transform: translateX(-50%);
+    }
+
 
 }
 
@@ -957,6 +1181,49 @@
         height: 420px;
         padding: 0 13px;
         overflow: auto;
+    }
+    /*home is page 1*/
+    .page1 .line1{
+        position: absolute;
+        top: -6px;
+        left: 44%;
+        transform: translateX(-50%);
+    }
+    .page1 .line1 span{
+        position: absolute;
+        font-size: 50px;
+        font-weight: bold;
+    }
+    .page1 .line1 span.pt1{
+        top: 50px;
+        left: 0;
+        transform: translateX(-144%);
+    }
+    .page1 .line1 span.pt2{
+        top: 150px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .page1 .line1 span.pt3{
+        top: 250px;
+        left: 0;
+        transform: translateX(35%);
+    }
+
+    .page1 .line2{
+        position: absolute;
+        top: 270px;
+        left: 23%;
+        transform: rotate(23deg) translateX(50%);
+    }
+    .page1 .line3{
+        position: absolute;
+        font-size: 28px;
+        top: 370px;
+        left: 50%;
+        width: 100%;
+        text-align: center;
+        transform: translateX(-50%);
     }
 }
 

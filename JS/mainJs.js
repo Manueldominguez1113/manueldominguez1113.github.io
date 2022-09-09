@@ -96,10 +96,11 @@ const text = [
         id: 1,
         name: 'Hello World!',
         field: "<div class=\"page page1 \"> <!--home-->\n" +
-            "        <p class=\"line1\">I am Manuel Alex Dominguez</p>\n" +
-            "        <p class=\"line2\">Enthusiastic Web/Game Developer</p>\n" +
+            "        <p class=\"line1\">I am... <span class='pt1'>Manuel</span> <span class='pt2'>Alexander</span> <span class='pt3'>Dominguez</span></p>\n" +
+            "        <p class=\"line2\">The M.A.D. Developer!</p>\n" +
             "        <p class=\"line3\">Full-Stack Dev || Game Dev || Air Traffic Controller</p>\n" +
-            "    </div>"
+            "    </div>" +
+            "        <p class=\"line4 mobileText notice\">You're missing out! Come back on a bigger screen!</p>\n"
     },
     {
         id: 2,
@@ -133,15 +134,15 @@ const text = [
     {
         id: 5,
         name: 'Contact Me',
-        field: " <div class=\"page page5\" id=\"contact text-center\"> <!--contact info-->\n" +
-            "\n" +
-            "        <p class=\"line1\"><a href=\"#\"><img class=\"contactInfo\" src=\"assets/PNG/GitHub-Mark-Light-32px.png\" alt=\"gitHub\"><span>My Github</span></a></p>\n" +
+        field: " <div class=\"page page5\" id=\"contact\"> <!--contact info-->\n" +
+            "        <p id=\"available\" class=\"announcement\">I'm avaliable for hire!</p> <p id=\"hired\" class=\"announcement\">I'm currently employed! if someone sent you here looking for a job it most likely wasn't me!</p><p id=\"freeLance\" class=\"announcement\">I'm Looking to freelance for YOU!</p><p id=\"main\" class=\"announcement\">please contact me via these links if you wish to connect with me! I look forward to hearing from you!</p>    \n" +
+            "        <p class=\"line1\"><a href=\"https://github.com/Manueldominguez1113\"><img class=\"contactInfo\" src=\"assets/PNG/GitHub-Mark-Light-32px.png\" alt=\"gitHub\"><span> My Github</span></a></p>\n" +
             "        <!--Github/Manueldominguez1113-->\n" +
-            "        <p class=\"line2\"></p><a href=\"#\"><img class=\"contactInfo\" src=\"assets/ico/linkdin_iconwht.png\" alt=\"linkdin\"><span>My Linkedin</span></a></p>\n" +
+            "        <p class=\"line2\"><a href=\"https://www.linkedin.com/in/manueladominguez13/\"><img class=\"contactInfo\" src=\"assets/ico/linkdin_iconwht.png\" alt=\"linkdin\"><span> My Linkedin</span></a></p>\n" +
             "        <!--Linkdin/Manueldominguez1113-->\n" +
             "        <p class='line3'><a href=\"mailto:manueldominguez1113@gmail.com?subject=Hello Manuel! I am interested to get in touch..\">\n" +
-            "                <img class=\"contactInfo\" src=\"assets/ico/emailwhtx1.png\" alt=\"Email\"><span>My Email</span></a></p> <!--Manueldominguez1113@gmail.com-->\n" +
-            "        <a href=\"#\"></a>" +
+            "                <img class=\"contactInfo\" src=\"assets/ico/emailwhtx1.png\" alt=\"Email\"><span> My Email</span></a></p> <!--Manueldominguez1113@gmail.com-->\n" +
+            "        <a href=\"#\"></a>" + /*resume spot if I decide to make it live*/
             "    </div>"
     }
 ];
