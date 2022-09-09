@@ -178,13 +178,15 @@
     }
 
     #skills {
-        left: 35%;
+        left: 50%;
         top: 120px;
+        transform: translateX(-50%);
     }
 
     #work {
-        left: 35%;
+        left: 50%;
         top: 50px;
+        transform: translateX(-50%);
     }
 
     #contactMe {
