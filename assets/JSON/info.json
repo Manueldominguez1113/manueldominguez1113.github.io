@@ -1,42 +1,49 @@
 [
   {
     "title": "The Squire",
-    "description": "first video game created by a team of 4 professionals of different skillsets. play as the dutiful Squire in his question into the dungeon for his lazy knights weapon of ultimate power! I was responsible for the enemy AI and behaviours in our game!",
+    "id": "projectOne",
+    "description": "first video game created by a team of 4 professionals of different skillsets. play as the dutiful Squire in his quest into the dungeon for his lazy knights weapon of ultimate power! I was responsible for the enemy AI and behaviours in our game!",
     "image": "TheSquire.jpg",
     "link": "https://igahouseranger.itch.io/the-squire"
   },
   {
     "title": "Coffee Site",
+    "id": "projectTwo",
     "description": "First website created by me! An example website of a coffee shop using javascript, jquery, and CSS skills. go on! add a coffee! the site will recommend random coffees and remember your addition! Created over one weekend",
     "image": "CoffeeSite.png",
     "link": "https://htmlpreview.github.io/?https://github.com/manuel-Kat/coffee-project/blob/master/index.html"
   },
   {
     "title": "Design Site",
+    "id": "projectThree",
     "description": "worked with a team to create a sample site using media queries and CSS. need 1 site for both mobile and web? I can make that happen!",
     "image": "DesignSite.png",
     "link": "https://htmlpreview.github.io/?https://github.com/IsabellaAndMatt/CodeupDesignProject/blob/main/index.html"
   },
   {
     "title": "Contacts List Java",
+    "id": "projectFour",
     "description": "Using java, created a contacts list that you can add to, save names and numbers to , view and search through!",
     "image": "Contact_CLI.png",
     "link": "https://github.com/Manuel-Justin/Contacts-Manager-CLI"
   },
   {
     "title": "Reel Knowledge! Movie site",
+    "id": "projectFive",
     "description": "Utilizing Ajax requests, created a movie library website with peer programing to showcase GETting and POSTing to a seperate JSON",
     "image": "MovieSite.png",
     "link": "https://github.com/Mina-Manuel-Angel-MovieProj/MovieProj"
   },
   {
     "title": "PokeFight",
+    "id": "projectSix",
     "description": "no longer up. Created a fully functional website to create your own account, and play pokemon! collecting and fighting with your own personal team!",
     "image": "PokeFight.png",
     "link": "https://github.com/PokeCardFight/pokefight"
   },
   {
     "title": "Jawa Droid Trader Adlister",
+    "id": "projectSeven",
     "description": "requires SQL. Created an example website using MySQL to create your own account, view, and respond to adlistings of droids(star wars)! imagine being on tattooine with fellow Jawas trading parts online!",
     "image": "JawaDroidTrade.png",
     "link": "https://github.com/PokeCardFight/pokefight"

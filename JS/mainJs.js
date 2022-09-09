@@ -120,7 +120,8 @@ const text = [
         id: 3,
         name: 'My Skills',
         field: "    <div class=\"page page3  \"> <!--skills combine with one of the smaller paragraphs-->\n" +
-            "        I'm proficient in C#, Java, HTML, CSS, Javascript, Bootstrap, JQuery, and Unity so far. but I am continuing to learn\n" +
+            "        I'm proficient in C#, JavaScript, Java SE, Java EE (Servlets, JSP), MySQL, Test-Driven\n" +
+            "Development, Spring, Bootstrap, jQuery, Thymeleaf, HTML, CSS, and Unity so far. but I am continuing to learn\n" +
             "        and am excited to expand my resources!\n" +
             "    </div>"
     },
@@ -162,12 +163,12 @@ function renderText(page) {
 
             $.ajax('./assets/JSON/info.json').done((data) => {
                 data.forEach((project) => {
-                    cards += "<div class='ProjectCard'><div class='projectTitle text-center'><a href=\""+project.link+"\">" + project.title + "</a></div>"+
-                        "<img class='projectImage' src=\"./assets/PNG/"+project.image+"\" alt=\""+project.image+"\">"+
-                        "<div class='projectdescription'>"+ project.description+ "</div></div>";
+                    cards += "<div id=\""+project.id+"\" class='ProjectCard normalSize' onclick='fullScren(this);' ><div class='projectTitle text-center'><a href=\""+project.link+"\">" + project.title + "</a></div>"+
+                        "<a href='#top'><img class='projectImage' src=\"./assets/PNG/"+project.image+"\" alt=\""+project.image+"\">"+
+                        "<div class='projectdescription'>"+ project.description+ "</div></a></div>";
                 })
                 
-                    inner+= "    <div class=\"page page4 d-flex flex-row justify-content-between \"> <!--work-->\n" +
+                    inner+= "    <div class=\"page page4 d-flex flex-row flex-wrap justify-content-between goScroll \"> <a id=\"top\"></a><!--work-->\n" +
                         cards +
                         "    </div>"
                     return textArea.html(inner);
@@ -197,6 +198,11 @@ contactMe.click(() => {
     renderText(5);
 })
 
+function fullScren(element){
+    $(element).toggleClass("fullSize normalSize");
+    $(".page4").toggleClass("stopScroll goScroll");
+    
+}
 
 let clouds = $("#clouds");
 //cloud generator
