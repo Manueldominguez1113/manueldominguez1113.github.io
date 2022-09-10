@@ -75,12 +75,15 @@
 }
 #available, #freeLance, #hired{
     top: 0;
-    left: 47%;
+    left: 50%;
     transform: translateX(-50%);
+    width: 100%;
+    flex-wrap: nowrap;
+    text-align: center;
 }
 #main.announcement{
     top: 20px;
-    max-height: 73px;
+    max-height: 145px;
     overflow: auto;
 }
 .Portrait.night .page4 .ProjectCard.normalSize{
@@ -215,15 +218,15 @@
     }
     .page5 .line1{
         position: absolute;
-        top: 110px;
+        top: 170px;
     }
     .page5 .line2{
         position: absolute;
-        top: 160px;
+        top: 240px;
     }
     .page5 .line3{
         position: absolute;
-        top: 210px;
+        top: 310px;
     }
 
 
@@ -264,7 +267,7 @@
     }
     .page1 .line1 span.pt3{
         top: 130px;
-        right: 8vw;
+        right: calc(8vw + 8px);
         transform: translateX(75%);
     }
 
@@ -951,17 +954,17 @@
 
     .page5 .line1{
         position: absolute;
-        top: 90px;
+        top: 110px;
         left: 23px;
     }
     .page5 .line2{
         position: absolute;
-        top: 90px;
+        top: 110px;
         right: 23px;
     }
     .page5 .line3{
         position: absolute;
-        top: 150px;
+        top: 170px;
         left: 50%;
         transform: translateX(-50%);
     }
@@ -1175,7 +1178,7 @@
     }
     .page1 .line3{
         position: absolute;
-        font-size: 18px;
+        font-size: 17px;
         top: 250px;
         left: 50%;
         width: 100%;
