@@ -112,7 +112,7 @@ const text = [
             "        <p class=\"line2\">The M.A.D. Developer!</p>\n" +
             "        <p class=\"line3\">Full-Stack Dev || Game Dev || Air Traffic Controller</p>\n" +
             "    </div>" +
-            "        <p class=\"line4 mobileText notice\">You're missing out! Come back on a bigger screen!</p>\n"
+            "        <p class=\"line6 mobileText notice\">You're missing out! Come back on a bigger screen!</p>\n"
     },
     {
         id: 2,
@@ -171,7 +171,7 @@ function renderText(page) {
         }
         if (page === 4 && page === part.id) {
             let cards = "";
-            inner = "<div id=\"textTitle\" class=\"text-center\">" + part.name + "</div>"
+            inner = "<div id=\"textTitle\" class=\"text-center\">" + part.name + "</div><div class='page5 line4'>Click images to expand, click the names to go to each project!</div>"
 
             $.ajax('./assets/JSON/info.json').done((data) => {
                 data.forEach((project) => {
