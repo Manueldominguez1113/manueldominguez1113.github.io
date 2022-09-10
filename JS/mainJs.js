@@ -1,11 +1,23 @@
 "use strict";
 
+const loadingPage = $("#loadingScreen");
+const loading = $("#loadingAssets");
+const workPage = $(".page4");
 
 //loading screen
 window.addEventListener('load', () => {
-    $("#loadingScreen").removeClass("active");
+    loadingPage.removeClass("active fill");
     // works just need to make a quick loading page that loads first before everything else
 })
+//only ajax request on my site ia the work page. so this only needs to worry about that.
+$(document).ajaxStart(() => {
+    loading.addClass("fill");
+    loadingPage.addClass("active");
+});
+$(document).ajaxStop(() => {
+    loading.removeClass("fill");
+    loadingPage.removeClass("active ");
+});
 
 //constants
 const landSky = $('#contactMe');
@@ -158,21 +170,29 @@ function renderText(page) {
             return textArea.html(inner);
         }
         if (page === 4 && page === part.id) {
-            let cards="";
+            let cards = "";
             inner = "<div id=\"textTitle\" class=\"text-center\">" + part.name + "</div>"
 
             $.ajax('./assets/JSON/info.json').done((data) => {
                 data.forEach((project) => {
-                    cards += "<div id=\""+project.id+"\" class='ProjectCard normalSize' onclick='fullScren(this);' ><div class='projectTitle text-center'><a href=\""+project.link+"\">" + project.title + "</a></div>"+
-                        "<a href='#top'><img class='projectImage' src=\"./assets/PNG/"+project.image+"\" alt=\""+project.image+"\">"+
-                        "<div class='projectdescription'>"+ project.description+ "</div></a></div>";
+                    cards += "<div id=\"" + project.id + "\" class='ProjectCard normalSize' onclick='fullScren(this);' ><div class='projectTitle text-center'><a href=\"" + project.link + "\">" + project.title + "</a></div>" +
+                        "<a href='#top'><img class='projectImage' src=\"./assets/PNG/" + project.image + "\" alt=\"" + project.image + "\">" +
+                        "<div class='projectdescription'>" + project.description + "</div></a></div>";
                 })
-                
-                    inner+= "    <div class=\"page page4 d-flex flex-row flex-wrap justify-content-between goScroll \"> <a id=\"top\"></a><!--work-->\n" +
-                        cards +
-                        "    </div>"
-                    return textArea.html(inner);
-                
+
+                inner += "    <div class=\"page page4 d-flex flex-row flex-wrap justify-content-between goScroll \"> <a id=\"top\"></a><!--work-->\n" +
+                    cards +
+                    "    </div>"
+                return textArea.html(inner);
+
+
+            }).error(() => {
+                inner = "<div id=\"textTitle\" class=\"text-center\">" + part.name + "</div>" +
+                    "    <div class=\"page page4 d-flex flex-row flex-wrap justify-content-between goScroll \"><!--work-->\n" +
+                    "   Error, JSON containing all of my work didnt load in correctly, please try again later." +
+                    "    </div>"
+                return textArea.html(inner);
+
 
             })
         }
@@ -198,10 +218,10 @@ contactMe.click(() => {
     renderText(5);
 })
 
-function fullScren(element){
+function fullScren(element) {
     $(element).toggleClass("fullSize normalSize");
-    $(".page4").toggleClass("stopScroll goScroll");
-    
+    workPage.toggleClass("stopScroll goScroll");
+
 }
 
 let clouds = $("#clouds");
@@ -209,9 +229,9 @@ let clouds = $("#clouds");
 setInterval(randomClouds, 3500);
 
 function randomClouds() {
-    let lR = Math.floor(Math.random()*(3-1)+1);
+    let lR = Math.floor(Math.random() * (3 - 1) + 1);
     let cloudNum = Math.floor(Math.random() * (5 - 1) + 1);
-    let left =  lR === 1;
+    let left = lR === 1;
     clouds.html(" "); //make sure clear clouds
 
     clouds.html(cloudGenerator(cloudNum, left));
@@ -256,15 +276,15 @@ function cloudGenerator(number, left) {
                     "<img src=\"assets/portrait/clouds/cloudnight5.png\" class=\"cloud cloud1 nightCloud passingRight\" alt=\"cloud night\">";
             }
         }
-       /* case(5): { hate the fifth cloud...
-            if (left) {
-                return "<img src=\"assets/portrait/clouds/cloudday4.png\" class=\"cloud cloud1 dayCloud passingLeft\" alt=\"cloud\">\n" +
-                    "<img src=\"assets/portrait/clouds/cloudnight4.png\" class=\"cloud cloud1 nightCloud passingLeft\" alt=\"cloud night\">";
-            } else {
-                return "<img src=\"assets/portrait/clouds/cloudday4.png\" class=\"cloud cloud1 dayCloud passingRight\" alt=\"cloud\">\n" +
-                    "<img src=\"assets/portrait/clouds/cloudnight4.png\" class=\"cloud cloud1 nightCloud passingRight\" alt=\"cloud night\">";
-            }
-        }*/
+        /* case(5): { hate the fifth cloud...
+             if (left) {
+                 return "<img src=\"assets/portrait/clouds/cloudday4.png\" class=\"cloud cloud1 dayCloud passingLeft\" alt=\"cloud\">\n" +
+                     "<img src=\"assets/portrait/clouds/cloudnight4.png\" class=\"cloud cloud1 nightCloud passingLeft\" alt=\"cloud night\">";
+             } else {
+                 return "<img src=\"assets/portrait/clouds/cloudday4.png\" class=\"cloud cloud1 dayCloud passingRight\" alt=\"cloud\">\n" +
+                     "<img src=\"assets/portrait/clouds/cloudnight4.png\" class=\"cloud cloud1 nightCloud passingRight\" alt=\"cloud night\">";
+             }
+         }*/
 
 
     }

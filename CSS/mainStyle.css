@@ -1,10 +1,13 @@
 #loadingScreen {
     position: absolute;
-    background-color: #bbbbbb;
-    width: 100vw;
-    height: 100vh;
     opacity: 0;
     transition-duration: 0.5s;
+    width: 100vw;
+    height: 100vh;
+}
+.fill{
+    background-color: #bbbbbb;
+
 }
 
 #loadingAssets {
@@ -12,7 +15,7 @@
     transition-duration: .5s;
     height: 500px;
     width: 500px;
-    top: 58%;
+    top:38%;
     left: 50%;
     transform: translate(-50%, -34%);
 }
@@ -23,14 +26,20 @@
     transform: translate(-50%);
 }
 
+#loadingScreen img.load {
+    left: 61%;
+    top: 20%;
+    transform: translate(-50%);
+}
+
 #loadingScreen img.words {
-    top: 200px;
+    top: 55%;
     left: 47%;
 }
 
 #loadingScreen p {
     position: absolute;
-    top: -6%;
+    top: 13%;
     left: 46%;
     color: white;
     height: 100px;
@@ -45,7 +54,7 @@
     width: 0;
     height: 0;
     left: 224px;
-    top: 60px;
+    top: 31%;
     border-left: 10px solid transparent;
     border-right: 10px solid transparent;
     border-top: 15px solid black;
@@ -525,9 +534,6 @@
         display: none;
     }
 
-    #loadingAssets {
-        top: 40%;
-    }
 
     /*animation*/
     .spinning {
